@@ -132,7 +132,7 @@ const siteLang = siteConfig.lang.replace('_', '-')
 	<body class=" min-h-screen transition " class:list={[{"is-home": isHomePage, "enable-banner": enableBanner}]}>
 		<ConfigCarrier></ConfigCarrier>
 		<GlobalStyles>
-		<div id="banner-wrapper" class="absolute w-full">
+		<div id="banner-wrapper" class="fixed w-full ">
 			<ImageWrapper id="boxtest" alt="Banner image of the blog" class:list={["object-center object-cover h-full", {"hidden": !siteConfig.banner.enable}]}
 					  src={siteConfig.banner.src}
 			>
@@ -172,7 +172,7 @@ const siteLang = siteConfig.lang.replace('_', '-')
 	}
 	*/
 	.enable-banner #top-row {
-		@apply h-[calc(var(--banner-height)_-_4.5rem)]
+		@apply h-[calc(0.1_*_var(--banner-height))]
 	}
 }
 </style>
