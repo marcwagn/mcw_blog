@@ -3,7 +3,8 @@
 A static blog template built with [Astro](https://astro.build).
 
 
-![Preview Image](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
+![Preview Image](https://github.com/marcwagn/mcw_blog/blob/ed1a72fca4d84b0f11d930d8d22ea7769c9884e6/public/resource/home.png)
+
 
 ## ✨ New Features
 
@@ -11,15 +12,13 @@ A static blog template built with [Astro](https://astro.build).
 - [ ] Add German language support 
 - [ ] Add language switch feature 
 
-## ✨ Features [Fuwari]
+## ✨ Features (Fuwari)
 - [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
 - [x] Smooth animations and page transitions
 - [x] Light / dark mode
 - [x] Customizable theme colors & banner
 - [x] Responsive design
-- [ ] Comments
 - [x] Search
-- [ ] TOC
 
 ## 🚀 How to Use
 
