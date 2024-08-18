@@ -2,6 +2,7 @@
 
 A static blog template built with [Astro](https://astro.build).
 
+This website is based on [Fuwaris Repository](https://github.com/saicaca/fuwari/)! Thanks for this nice template :)! 
 
 ![Preview Image](https://github.com/marcwagn/mcw_blog/blob/ed1a72fca4d84b0f11d930d8d22ea7769c9884e6/public/resource/home.png)
 
@@ -10,7 +11,7 @@ A static blog template built with [Astro](https://astro.build).
 
 - [x] Replace banner by static background image
 - [ ] Add German language support 
-- [ ] Add language switch feature 
+- [ ] Add multilanguage frontend support
 
 ## ✨ Features (Fuwari)
 - [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
