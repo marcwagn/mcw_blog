@@ -10,8 +10,10 @@ This website is based on [Fuwaris Repository](https://github.com/saicaca/fuwari/
 ## ✨ New Features
 
 - [x] Replace banner by static background image
+- [x] Transform design into a project based layout
+- [x] Cover page should only present blog posts labeled as project
 - [ ] Add German language support 
-- [ ] Add multilanguage frontend support
+- [ ] Add multilanguage frontend support [long term goal]
 
 ## ✨ Features (Fuwari)
 - [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
