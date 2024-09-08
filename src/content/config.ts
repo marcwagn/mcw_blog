@@ -9,6 +9,7 @@ const postsCollection = defineCollection({
     image: z.string().optional(),
     tags: z.array(z.string()).optional(),
     category: z.string().optional(),
+    unit: z.number().optional(),
   }),
 })
 export const collections = {
