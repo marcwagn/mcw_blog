@@ -5,7 +5,7 @@ description: "In this Project you will learn how the genome of an unkown virus
 can be measured using modern technologies in molecular biology."
 #image: "./coronavirus.jpg"
 tags: ["Bioinformatics", "Biology", "Geography", "Project"]
-category: "Testproject"
+project: "Testproject"
 unit: 0
 draft: false
 ---

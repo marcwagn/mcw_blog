@@ -50,24 +50,24 @@ export async function getTagList(): Promise<Tag[]> {
   return keys.map(key => ({ name: key, count: countMap[key] }))
 }
 
-export type Category = {
+export type Project = {
   name: string
   count: number
 }
 
-export async function getCategoryList(): Promise<Category[]> {
+export async function getProjectList(): Promise<Project[]> {
   const allBlogPosts = await getCollection('posts', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true
   })
   const count: { [key: string]: number } = {}
   allBlogPosts.map(post => {
-    if (!post.data.category) {
+    if (!post.data.project) {
       const ucKey = i18n(I18nKey.uncategorized)
       count[ucKey] = count[ucKey] ? count[ucKey] + 1 : 1
       return
     }
-    count[post.data.category] = count[post.data.category]
-      ? count[post.data.category] + 1
+    count[post.data.project] = count[post.data.project]
+      ? count[post.data.project] + 1
       : 1
   })
 
@@ -75,7 +75,7 @@ export async function getCategoryList(): Promise<Category[]> {
     return a.toLowerCase().localeCompare(b.toLowerCase())
   })
 
-  const ret: Category[] = []
+  const ret: Project[] = []
   for (const c of lst) {
     ret.push({ name: c, count: count[c] })
   }

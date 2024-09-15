@@ -3,16 +3,16 @@ import WidgetLayout from "./WidgetLayout.astro";
 
 import {i18n} from "../../i18n/translation";
 import I18nKey from "../../i18n/i18nKey";
-import {Category, getCategoryList} from "../../utils/content-utils";
-import {getCategoryUrl} from "../../utils/url-utils";
+import {Project, getProjectList} from "../../utils/content-utils";
+import {getProjectUrl} from "../../utils/url-utils";
 import ButtonLink from "../control/ButtonLink.astro";
 
-const categories = await getCategoryList();
+const projects = await getProjectList();
 
 const COLLAPSED_HEIGHT = "7.5rem";
 const COLLAPSE_THRESHOLD = 5;
 
-const isCollapsed = categories.length >= COLLAPSE_THRESHOLD;
+const isCollapsed = projects.length >= COLLAPSE_THRESHOLD;
 
 interface Props {
     class?: string;
@@ -23,14 +23,14 @@ const style = Astro.props.style
 
 ---
 
-<WidgetLayout name={i18n(I18nKey.categories)} id="categories" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT}
+<WidgetLayout name={i18n(I18nKey.projects)} id="projects" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT}
                 class={className} style={style}
 >
-    {categories.map((c) =>
+    {projects.map((c) =>
         <ButtonLink
-            url={getCategoryUrl(c.name)}
+            url={getProjectUrl(c.name)}
             badge={c.count}
-            label=`View all posts in the ${c.name} category`
+            label=`View all posts in the ${c.name} Project`
         >
             {c.name}
         </ButtonLink>

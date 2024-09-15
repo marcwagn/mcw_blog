@@ -47,8 +47,8 @@
           "type": "list"
         },
         {
-          "title": "category",
-          "name": "category",
+          "title": "project",
+          "name": "project",
           "type": "string"
         },
         {

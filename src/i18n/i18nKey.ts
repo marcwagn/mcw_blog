@@ -5,7 +5,7 @@ enum I18nKey {
   search = 'search',
 
   tags = 'tags',
-  categories = 'categories',
+  projects = 'projects',
   recentPosts = 'recentPosts',
 
   comments = 'comments',

@@ -12,10 +12,11 @@ type Entry = {
     draft: boolean;
     title: string;
     tags: string[];
-    category: string;
+    project: string;
     published: Date;
     image: string;
     description: string;
+    unit: number;
   };
   slug: string;
 }
@@ -23,20 +24,20 @@ type Entry = {
 ---
 <div class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4">
     {page.data.filter((entry: Entry) =>
-        entry.data.tags.includes("Project")
+        entry.data.unit === 0
     ).map((entry: Entry) => {
         return (
             <PostCard
                     entry={entry}
                     title={entry.data.title}
                     tags={entry.data.tags}
-                    category={entry.data.category}
+                    project={entry.data.project}
                     published={entry.data.published}
-                    url={getPostUrlBySlug(entry.slug)}
+                    url={getPostUrlBySlug(entry.slug) ?? ''}
                     image={entry.data.image}
                     description={entry.data.description}
                     draft={entry.data.draft}
-                    class:list="onload-animation"
+                    class="onload-animation"
                     style={`animation-delay: calc(var(--content-delay) + ${delay++ * interval}ms);`}
             ></PostCard>
         );

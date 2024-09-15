@@ -17,11 +17,11 @@ export function getPostUrlBySlug(slug: string): string | null {
   return url(`/posts/${slug}/`)
 }
 
-export function getCategoryUrl(category: string): string | null {
-  if (!category) return null
-  if (category === i18n(i18nKey.uncategorized))
-    return url('/archive/category/uncategorized/')
-  return url(`/archive/category/${category}/`)
+export function getProjectUrl(project: string): string | null {
+  if (!project) return null
+  if (project === i18n(i18nKey.uncategorized))
+    return url('/archive/project/uncategorized/')
+  return url(`/archive/project/${project}/`)
 }
 
 export function getDir(path: string): string {

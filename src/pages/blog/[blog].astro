@@ -5,7 +5,7 @@ import Pagination from "@components/control/Pagination.astro";
 import {getSortedPosts} from "@utils/content-utils";
 import {getPostUrlBySlug} from "@utils/url-utils";
 import {PAGE_SIZE} from "@constants/constants";
-import PostPage from "@components/PostPage.astro";
+import PostPage from "@components/ProjectPage.astro";
 
 export function getStaticPaths() {
   return [
@@ -18,7 +18,7 @@ const {blog} = Astro.props;
 console.log(blog);
 ---
 
-<MainGridLayout>
+<MainGridLayout title="">
     <!-- <PostPage page={blog}></PostPage>
     <Pagination class="mx-auto onload-animation" page={blog} style=`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`></Pagination> -->
 </MainGridLayout>

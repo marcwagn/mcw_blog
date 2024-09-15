@@ -1,25 +1,24 @@
 ---
-import {getCategoryList, getSortedPosts} from "@utils/content-utils";
+import {getProjectList, getSortedPosts} from "@utils/content-utils";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import ArchivePanel from "@components/ArchivePanel.astro";
 import {i18n} from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
 
 export async function getStaticPaths() {
-    const categories = await getCategoryList();
-    return categories.map(category => {
+    const projects = await getProjectList();
+    return projects.map(project => {
         return {
             params: {
-                category: category.name
+                project: project.name
             }
         }
     });
 }
 
-const { category } = Astro.params;
-
+const { project } = Astro.params;
 ---
 
 <MainGridLayout title={i18n(I18nKey.archive)} description={i18n(I18nKey.archive)}>
-    <ArchivePanel categories={[category]}></ArchivePanel>
+    <ArchivePanel projects={[project]} keyword="" tags={[]}></ArchivePanel>
 </MainGridLayout>

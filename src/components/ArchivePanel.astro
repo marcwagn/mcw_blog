@@ -8,9 +8,9 @@ import {UNCATEGORIZED} from "@constants/constants";
 interface Props {
     keyword: string;
     tags: string[];
-    categories: string[];
+    projects: string[];
 }
-const { keyword, tags, categories} = Astro.props;
+const { keyword, tags, projects} = Astro.props;
 
 let posts = await getSortedPosts()
 
@@ -20,15 +20,15 @@ if (Array.isArray(tags) && tags.length > 0) {
     );
 }
 
-if (Array.isArray(categories) && categories.length > 0) {
+if (Array.isArray(projects) && projects.length > 0) {
     posts = posts.filter(post =>
-        (post.data.category && categories.includes(post.data.category)) ||
-        (!post.data.category && categories.includes(UNCATEGORIZED))
+        (post.data.project && projects.includes(post.data.project)) ||
+        (!post.data.project && projects.includes(UNCATEGORIZED))
     );
 }
 
 const groups = function () {
-    const groupedPosts = posts.reduce((grouped, post) => {
+    const groupedPosts = posts.reduce((grouped : { [key: number]: any[] }, post) => {
         const year = post.data.published.getFullYear()
         if (!grouped[year]) {
             grouped[year] = []
@@ -38,9 +38,9 @@ const groups = function () {
     }, {})
 
     // convert the object to an array
-    const groupedPostsArray = Object.keys(groupedPosts).map(key => ({
-        year: key,
-        posts: groupedPosts[key]
+    const groupedPostsArray = Object.keys(groupedPosts).map((key: string) => ({
+        year: parseInt(key),
+        posts: groupedPosts[parseInt(key)]
     }))
 
     // sort years by latest first
@@ -57,7 +57,7 @@ function formatDate(date: Date) {
 function formatTag(tag: string[]) {
     return tag.map(t => `#${t}`).join(' ');
 }
-
+groups.map(group => console.log(group.posts[0].data.project));
 ---
 
 <div class="card-base px-8 py-6">
